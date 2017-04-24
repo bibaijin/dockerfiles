@@ -39,7 +39,7 @@ RUN cd nginx-${NGINX_VERSION} \
                    --with-mail=dynamic \
     && make && make install
 
-RUN ln -sf /nginx /usr/local/nginx/nginx
+RUN ln -s /usr/local/nginx/nginx /nginx
 
 EXPOSE 80
 
