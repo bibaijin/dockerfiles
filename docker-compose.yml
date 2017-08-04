@@ -1,0 +1,8 @@
+version: "2"
+
+services:
+  debian:
+    build:
+      context: debian/stretch
+      dockerfile: Dockerfile
+    image: bibaijin/debian:stretch
