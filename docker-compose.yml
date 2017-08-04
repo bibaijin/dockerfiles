@@ -6,3 +6,11 @@ services:
       context: debian/stretch
       dockerfile: Dockerfile
     image: bibaijin/debian:stretch
+
+  golang:
+    build:
+      context: golang/1.8
+      dockerfile: Dockerfile
+    image: bibaijin/golang:1.8
+    depends_on:
+      - debian
