@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/usr/bin/execlineb -P
 
-# ensure ownership & permissions for /lain/logs/default
-mkdir -p /lain/logs/default
-chown -R nobody:nobody /lain/logs/default
+# ensure ownership & permissions for /var/log/app
+if { s6-mkdir -p /var/log/app }
+if { s6-envuidgid -D 32768:32768 nobody s6-chown -U /var/log/app }
+if { s6-chmod 2700 /var/log/app }
 
-exec logutil-service /lain/logs/default
+logutil-service /var/log/app
