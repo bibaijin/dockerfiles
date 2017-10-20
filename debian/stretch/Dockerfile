@@ -6,6 +6,8 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && apt-get install -y --no-install-recommends \
                        ca-certificates \
                        curl \
+                       dirmngr \
+                       gnupg2 \
                        wget \
     && rm -rf /var/lib/apt/lists/*
 
