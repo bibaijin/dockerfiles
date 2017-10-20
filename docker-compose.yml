@@ -1,16 +1,21 @@
 version: "2"
 
 services:
-  debian:
+  debian_stretch:
     build:
       context: debian/stretch
-      dockerfile: Dockerfile
     image: bibaijin/debian:stretch
 
-  golang:
+  golang_1_8:
     build:
       context: golang/1.8
-      dockerfile: Dockerfile
     image: bibaijin/golang:1.8
     depends_on:
-      - debian
+      - debian_stretch
+
+  haskell_8_2:
+    build:
+      context: haskell/8.2
+    image: bibaijin/haskell:8.2
+    depends_on:
+      - debian_stretch
