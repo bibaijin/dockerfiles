@@ -6,6 +6,13 @@ services:
       context: debian/stretch
     image: bibaijin/debian:stretch
 
+  nginx:
+    build:
+      context: nginx/1.13
+    image: bibaijin/nginx:1.13
+    depends_on:
+      - debian_stretch
+
   golang_1_8:
     build:
       context: golang/1.8
