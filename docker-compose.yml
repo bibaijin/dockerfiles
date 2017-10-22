@@ -6,10 +6,17 @@ services:
       context: debian/stretch
     image: bibaijin/debian:stretch
 
-  nginx:
+  nginx_1_13:
     build:
       context: nginx/1.13
     image: bibaijin/nginx:1.13
+    depends_on:
+      - debian_stretch
+
+  caddy_0_10:
+    build:
+      context: caddy/0.10
+    image: bibaijin/caddy:0.10
     depends_on:
       - debian_stretch
 
