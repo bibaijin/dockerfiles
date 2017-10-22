@@ -12,10 +12,3 @@ services:
     image: bibaijin/golang:1.8
     depends_on:
       - debian_stretch
-
-  haskell_8_2:
-    build:
-      context: haskell/8.2
-    image: bibaijin/haskell:8.2
-    depends_on:
-      - debian_stretch
