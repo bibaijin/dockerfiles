@@ -8,7 +8,15 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
                        curl \
                        dirmngr \
                        gnupg2 \
+                       lsof \
+                       net-tools \
+                       procps \
+                       tcpdump \
+                       telnet \
+                       unzip \
+                       vim \
                        wget \
+                       xz-utils \
     && rm -rf /var/lib/apt/lists/*
 
 ENV S6_OVERLAY_VERSION=v1.20.0.0 \
